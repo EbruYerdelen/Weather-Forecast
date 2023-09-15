@@ -25,8 +25,8 @@ async function getWeather() {
   return weatherCondt;
 }
 
-async function displayData(weather) {
-  switch (weather) {
+async function displayData(myweather) {
+  switch (myweather) {
     case "Clouds":
       weatherImage.src = "assets/images&design/clouds.png";
       break;
@@ -48,11 +48,4 @@ async function displayData(weather) {
   }
 }
 
-function displayError() {
-  temp.textContent = "23°C";
-  city.textContent = "Berlin";
-  humPercentage.textContent = "51%";
-  windSpeed.textContent = "5.81 km/h";
-}
-
-getWeather().then(displayData).catch(displayError);
+getWeather().then(displayData);
